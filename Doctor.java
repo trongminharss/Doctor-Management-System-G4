@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package doctor.lab1;
+package Entity;
 
 /**
  *
- * @author thanhtnnt
+ * @author owner
  */
-class Doctor {
-    private static int idCounter = 1;
+public class Doctor {
     private int id;
     private String name;
     private String dateOfBirth;
@@ -19,8 +18,19 @@ class Doctor {
     private String email;
     private String mobile;
 
+    public Doctor() {
+    }
+
     public Doctor(String name, String dateOfBirth, String specialization, int availability, String email, String mobile) {
-        this.id = idCounter++;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.specialization = specialization;
+        this.availability = availability;
+        this.email = email;
+        this.mobile = mobile;
+    }
+    public Doctor(int id, String name, String dateOfBirth, String specialization, int availability, String email, String mobile) {
+        this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.specialization = specialization;
@@ -29,13 +39,20 @@ class Doctor {
         this.mobile = mobile;
     }
 
-    // Getters and setters for doctor attributes
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDateOfBirth() {
@@ -80,7 +97,14 @@ class Doctor {
 
     @Override
     public String toString() {
-        return "Doctor [ID=" + id + ", Name=" + name + ", DOB=" + dateOfBirth + ", Specialization=" + specialization 
-                + ", Availability=" + availability + ", Email=" + email + ", Mobile=" + mobile + "]";
+        return "Doctor{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", specialization='" + specialization + '\'' +
+                ", availability=" + availability +
+                ", email='" + email + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
     }
 }
